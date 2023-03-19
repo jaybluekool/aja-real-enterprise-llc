@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en-US" class="loading-site no-js">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="descrıptıon" content="mobile home parks">
+    <meta property="og:title" content="mobile home parks">
+    <meta property="og:description" content="mobile home parks">
+    <meta property="og:type" content="Website">
+    <meta property="og:image" content="https://ajaenterprise.s3.amazonaws.com/AJAEnterprise.png">
+    <meta property="og:url" content="https://ajaenterprise.s3.amazonaws.com/aja+enterprise.html">
+<title>AJA Real Enterprise Register</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="https://ajaenterprise.s3.amazonaws.com/GlobalStyles.css"/>
+    <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/lib/w3.css"/>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+   
+    
+<SCRIPT> 
+function SubmitRegister() 
+  { 
+     var user = window.location.search.substring(1);
+     var Login = document.forms["form1"]["login"].value;
+     var PassWord = document.forms["form1"]["password"].value;
+     var CustName = document.forms["form1"]["custname"].value;
+     var Email = document.forms["form1"]["email"].value;
+     var Unit = document.forms["form1"]["unit"].value;
+     var Phone = document.forms["form1"]["phone"].value;
+     var validPw = null;
+     Login = Login.toLowerCase(); 
+     if (Login == "") 
+     { 
+       alert ("login missing!");
+       //var loc = window.location.href='https://interchangempe.s3.amazonaws.com/Missing_user.html';
+       //window.open (loc, "_self", fullscreen="yes");
+     } 
+     if (PassWord == "") 
+     { 
+       alert ("password missing!");
+       //var loc = window.location.href='https://interchangempe.s3.amazonaws.com/Missing_pw.html';
+       //window.open (loc, "_self", fullscreen="yes");
+     } 
+     if (user == "Not Authorized") 
+     {           
+       alert (user);
+       //var loc = window.location.href='https://interchangempe.s3.amazonaws.com/Error.html';
+       //window.open (loc, "_self", fullscreen="yes");
+     } 
+     if (window.XMLHttpRequest)
+      {
+        var request = new XMLHttpRequest();
+      }
+     else
+      { 
+    	var request = new ActiveXObject("Microsoft.XMLHTTP");
+      } 
+      
+      //request.open('POST', '//ec2-54-234-85-26.compute-1.amazonaws.com:3000/register?uname=Login&password=passWord/' + Login + ',password%20' + PassWord, true);
+      request.open('POST', '//127.0.0.1:3000/register?uname=' + Login + '&password=' + PassWord + '/', true);
+      
+      request.responseType = "text";
+   
+    request.onreadystatechange = function() {
+    	
+        if (request.readyState == 4 && request.status==200)
+            {
+        	 validPw = request.responseText;
+            
+            if (String(validPw) == "attempts exceeded") 
+             { 
+               passWord = null;
+               login    = null;
+               validPw  = null;
+               alert ("attempts exceeded!");
+               //var loc = window.location.href='https://interchangempe.s3.amazonaws.com/Attempts_exceeded.html';
+               //window.open (loc, "_self", fullscreen="yes");
+             } 
+             if (String(validPw) != "true") 
+             { 
+        		 
+        	 var loc = window.location.href='/Error.html';
+             } 
+             else
+                {    
+        		
+        	 var loc = "https://ajaenterprise.s3.amazonaws.com/success.html";
+                }
+             
+         window.open (loc, "_self", fullscreen="yes");
+             
+         }
+         else
+         {
+           var loc = window.location.href='https://interchangempe.s3.amazonaws.com/Error.html?' + "state: " + request.readyState + " status: "  + request.status +                                                " resp: " + validPw;
+           window.open (loc, "_self", fullscreen="yes");
+         }
+      };
+      request.send();
+  } 
+  
+
+
+
+</SCRIPT> 
+
+</head>
+ 
+<body style="background-color: #28426c; margin-top: 0;">
+ 
+   <script>
+      function openMenu() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("menu").style.marginLeft = "250px";
+      }
+      
+      function closeMenu() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("menu").style.marginLeft= "0";
+      }
+      function accFunction(id) {
+        var x = document.getElementById(id);
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+        } else { 
+          x.className = x.className.replace(" w3-show", "");
+        }
+      }
+      window.onscroll = function() {scrollFunction()};
+      function scrollFunction() {
+       if (window.pageYOffset > 50)  {
+          document.querySelector(".w3-top").style.cssText = 'background-color: #28426c; display: inline-flex; height:90px; transition: background 1s ease-in-out;';
+          } else {
+          document.querySelector(".w3-top").style.cssText = 'background-color: transparent; display: inline-flex; height:90px; ");';
+          } 
+       }
+    
+  </script>
+  <style>
+   .fa {  
+   padding: 20px;  
+ text-align: center;  
+   margin: 5px 7px;  
+   font-size: 30px;  
+   width: 50px;  
+ }  
+ .fa-facebook {  
+   color: black;  
+ }  
+ .fa-twitter {  
+   color: black;  
+ }  
+ .fa-pinterest {  
+   color: black;  
+ }  
+ .fa-linkedin {  
+   color: black;  
+ }  
+ .fa-instagram {      
+   color: black;  
+ }  
+ .fa-youtube {  
+   color: black;  
+ }  
+ .fa-google {  
+   color: black;  
+ }  
+ .fa-snapchat-ghost {     
+   color: black;  
+   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;  
+ }  
+ .fa-skype {  
+   color: black;  
+ }  
+ .fa:hover {  
+     opacity: 0.9;  
+ } 
+ .fa-comment {  
+   color: #28426c;  
+ } 
+ .fa-cloud {  
+   color: #28426c;  
+ } 
+ .fa-dollar {  
+   color: #28426c;  
+ }    
+   .sidebar {
+     height: 100%;
+     width: 0;
+     position: fixed;
+     z-index: 1;
+     top: 0;
+     left: 0;
+     background-color: #f1f1f1;
+     overflow-x: hidden;
+     transition: 0.5s;
+     padding-top: 60px;
+   }
+   
+   .sidebar a {
+     padding: 8px 8px 8px 32px;
+     text-decoration: none;
+     font-size: 25px;
+     color: #818181;
+     display: block;
+     transition: 0.3s;
+   }
+   
+   .sidebar a:hover {
+     color: #f1f1f1;
+   }
+   
+   .sidebar .closebtn {
+     position: absolute;
+     top: 0;
+     right: 25px;
+     font-size: 36px;
+     margin-left: 50px;
+   }
+   
+   .openbtn {
+     font-size: 20px;
+     cursor: pointer;
+     padding: 10px 15px;
+     border: none;
+   }
+   
+   .openbtn:hover {
+     background-color: #444;
+   }
+   
+   #main {
+     transition: margin-left .5s;
+     padding: 16px;
+   }
+   
+   @media screen and (max-height: 450px) {
+     .sidebar {padding-top: 15px;}
+     .sidebar a {font-size: 18px;}
+   }
+   </style>
+ 
+   <div class="w3-bar w3-mobile img" style="width:100%;  height: 600px; display: block; background-size: cover;  margin-bottom: 30px; background:  linear-gradient(0deg,transparent, rgba(36, 35, 37, 0.65)), url('https://ajaenterprise.s3.amazonaws.com/Mobile-Home-Park-Hero-Image.png')no-repeat center center / cover;"> 
+      <div class="w3-bar w3-mobile img" style="opacity: 1; width:100%; margin-top: 20px; margin-bottom: 30px; "> 
+       <div class="w3-top nav img"  style="  height:90px; ">
+         <a href="https://ajareal.com">
+         <img src="https://ajaenterprise.s3.amazonaws.com/AJAEnterprise-Banner.png" alt="loading..." width=125px; height=60px;>
+         </a>
+         <div id="mySidebar" class="sidebar">
+             <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">×</a>
+             <ul>
+                 <li class="nav__item" onClick="Login()"> <a href="#" >Customer Portal</a></li>
+                 <li class="nav__item" onClick="AboutUs()"> <a href="#" >About Us</a></li>
+                 <li class="nav__item" onClick="SubmitCheck()"> <a href="#" >Our Mission</a></li>
+                 <li class="nav__item" onClick="RentTuro()"> <a href="#" >Turo</a></li>
+                 <li class="nav__item" onClick="Featured()"> <a href="#" >Featured</a></li>
+              </ul>
+         </div>
+            
+         <div id="menu">
+             <button class="openbtn" onclick="openMenu()">☰</button>  
+         </div>
+       </div>
+      </div>
+   
+   <div id="tabs" style="position: absolute; top:160px; left:630px; text-align:center; width:900px; height:25px; font-family:verdana,arial">
+      <table id='ap_table' style="text-align:center">
+        <caption style="color: white;">AJA Real Enterprise Registration</caption>
+        <tr>
+           <td background="F71212"><table>
+        <tr>
+           <td background="F71212" text-align=center style="padding:2;padding-bottom:4; font-family:verdana,arial">
+               <b style="color: white;">
+                  Enter your credentials
+               </b>
+               
+          </tr>
+          <tr>
+            <td background="white" style="padding:5; font-family:verdana,arial">
+               <br>
+                 <form name ="form1"  action="/register" method="post">
+                    <table>
+                          <tr>
+                              <td>
+                                  <label  style="color: white;" for="login">Login:</label>
+                              </td>
+                              
+                              <td>
+                                  <input id="login" name="login" type="text" autofocus required/>
+                              </td> 
+                           </tr>
+                           <tr>
+                              <td>
+                                  <label style="color: white;"  for="password">Password:</label>
+                              </td>
+                              
+                              <td>    
+                                  <input  id="password" name="password" type="password" autofocus required/>
+                               </td> 
+                           </tr>
+                           <tr>
+                               <td>
+                                  <label style="color: white;" for="custname">Name:</label>
+                               </td>
+                               
+                              <td>
+                                  <input  id="custname" name="custname" type="text" autofocus required/>
+                               </td> 
+                           </tr>
+                           <tr>
+                              <td>
+                                   <label style="color: white;" for="email">Email:</label>
+                              </td>
+                              
+                              <td>
+                                   <input  id="email" name="email" type="email" required/>
+                              </td>     
+                           </tr>
+                           <tr>
+                               <td>
+                                  <label style="color: white;" for="unit">Unit:</label>
+                               </td>
+                               
+                              <td>
+                                  <input  id="unit" name="unit" type="text" autofocus required/>
+                               </td> 
+                           </tr>
+                           <tr>
+                               <td>
+                                  <label style="color: white;" for="phone">Phone Number:</label>
+                               </td>
+                               
+                              <td>
+                                  <input  id="phone" name="phone" type="text" autofocus required/>
+                               </td> 
+                           </tr>
+                           <tr>
+                              
+                              <td style="font-family:verdana,arial">
+                                 
+                                    <input class="card" style="background-color: white; color: red;" type="submit" value="Register"/>
+                                
+                              </td>
+                           </tr>
+                                                      
+                      </table>
+                  </form>
+             
+          </tr>
+       </table>
+      </td>
+    </tr>
+</table>
+</div>
+<div style="position: absolute; top:460px; left:600px; text-align:center; width:900px; height:25px;">
+   
+  <table id='yh_table' style="text-align:center">
+    <tr>
+      <td>       
+         <h style="text-align:justify;  color: white;">
+             You're about to register for AJA Real Enterprise Payment portal.
+         </h>
+      </td>
+    </tr>
+    <tr>
+      <td color: white;>       
+         <h style="text-align:justify;  color: white;">
+             To continue, enter the credentials you wish to register with... 
+         </h>
+      </td>
+    </tr>
+  </table>
+</div>        
+</body>
+
+</html>

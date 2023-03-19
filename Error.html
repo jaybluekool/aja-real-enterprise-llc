@@ -1,0 +1,391 @@
+<html>
+<head>
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="descrıptıon" content="mobile home parks">
+   <meta property="og:title" content="mobile home parks">
+   <meta property="og:description" content="mobile home parks">
+   <meta property="og:type" content="Website">
+   <meta property="og:image" content="https://ajaenterprise.s3.amazonaws.com/AJAEnterprise.png">
+   <meta property="og:url" content="https://ajaenterprise.s3.amazonaws.com/aja+enterprise.html">
+<title>AJA Real Enterprise Error</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"> 
+   <link rel="stylesheet" type="text/css" href="https://ajaenterprise.s3.amazonaws.com/GlobalStyles.css"/>
+   <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/lib/w3.css"/>
+   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+     
+<style>
+<table {style="text-align:center"; border-spacing: 0; padding: 0; width:100%;}>
+</style>
+<title>First Data - Interchange MPE Database Login</title>
+
+<SCRIPT> 
+ 
+function SubmitPassword() 
+  {  
+	 var user = window.location.search.substring(1); 
+	 var passWord = document.getElementById("pw").value;
+	 var login    = document.getElementById("lg").value;
+     var validPw = null;
+     login = login.toLowerCase(); 
+     if (login == "") 
+     { 
+       alert ("login missing!");
+     } 
+     if (passWord == "") 
+     { 
+       alert ("password missing!");
+     } 
+     if (user == "Not Authorized") 
+     {           
+       alert (user);
+     } 
+     if (window.XMLHttpRequest)
+      {
+        var request = new XMLHttpRequest();
+      }
+     else
+      { 
+    	var request = new ActiveXObject("Microsoft.XMLHTTP");
+      } 
+     
+    //request.open('GET', 'interchangempe-env-2.nyhzm722m4.us-east-1.elasticbeanstalk.com/ValidatePwServlet?uname=' + login + '&password=' + passWord, true); 
+    request.open('GET', 'http://localhost:8080/InterchangeMPE/ValidatePwServlet?uname=' + login + '&password=' + passWord, true);
+    request.responseType = "text";
+    request.onreadystatechange = function() {
+    	
+        if (request.readyState == 4 && request.status==200)
+            {
+        	 validPw = request.responseText;
+        	
+        	 if (String(validPw) == "attempts exceeded") 
+             { 
+          	   alert ("Login attempts exceeded");
+          	   passWord = null;
+               login    = null;
+               validPw  = null;
+             } 
+        	 if (String(validPw) != "true") 
+             { 
+          	   alert ("Not Authorized");
+          	   passWord = null;
+               login    = null;
+               validPw  = null;
+             } 
+             
+             var loc = "mpe.html?" + login; 
+             
+             if (passWord != "" && login != "" && validPw != null) 
+             { 
+               window.open (loc, "_self", fullscreen="yes");
+             } 
+            }
+         }
+    request.send();
+   
+  } 
+ 
+function CheckUser() 
+  {  
+     var user = window.location.search.substring(1);
+          
+     if (user == "Not Authorized") 
+      {           
+        window.open ("Login Form.html?", "_self", fullscreen="yes");
+        alert (user);
+        
+      } 
+ } 
+
+</SCRIPT> 
+
+</head>
+ 
+<body style="background-color: #28426c; margin-top: 0;">
+
+   <script>
+      function openMenu() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("menu").style.marginLeft = "250px";
+      }
+      
+      function closeMenu() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("menu").style.marginLeft= "0";
+      }
+      function accFunction(id) {
+        var x = document.getElementById(id);
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+        } else { 
+          x.className = x.className.replace(" w3-show", "");
+        }
+      }
+      window.onscroll = function() {scrollFunction()};
+      function scrollFunction() {
+       if (window.pageYOffset > 50)  {
+          document.querySelector(".w3-top").style.cssText = 'background-color: #28426c; display: inline-flex; height:90px; transition: background 1s ease-in-out;';
+          } else {
+          document.querySelector(".w3-top").style.cssText = 'background-color: transparent; display: inline-flex; height:90px; ");';
+          } 
+       }
+    
+  </script>
+  <style>
+   .fa {  
+   padding: 20px;  
+ text-align: center;  
+   margin: 5px 7px;  
+   font-size: 30px;  
+   width: 50px;  
+ }  
+ .fa-facebook {  
+   color: black;  
+ }  
+ .fa-twitter {  
+   color: black;  
+ }  
+ .fa-pinterest {  
+   color: black;  
+ }  
+ .fa-linkedin {  
+   color: black;  
+ }  
+ .fa-instagram {      
+   color: black;  
+ }  
+ .fa-youtube {  
+   color: black;  
+ }  
+ .fa-google {  
+   color: black;  
+ }  
+ .fa-snapchat-ghost {     
+   color: black;  
+   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;  
+ }  
+ .fa-skype {  
+   color: black;  
+ }  
+ .fa:hover {  
+     opacity: 0.9;  
+ } 
+ .fa-comment {  
+   color: #28426c;  
+ } 
+ .fa-cloud {  
+   color: #28426c;  
+ } 
+ .fa-dollar {  
+   color: #28426c;  
+ }    
+   .sidebar {
+     height: 100%;
+     width: 0;
+     position: fixed;
+     z-index: 1;
+     top: 0;
+     left: 0;
+     background-color: #f1f1f1;
+     overflow-x: hidden;
+     transition: 0.5s;
+     padding-top: 60px;
+   }
+   
+   .sidebar a {
+     padding: 8px 8px 8px 32px;
+     text-decoration: none;
+     font-size: 25px;
+     color: #818181;
+     display: block;
+     transition: 0.3s;
+   }
+   
+   .sidebar a:hover {
+     color: #f1f1f1;
+   }
+   
+   .sidebar .closebtn {
+     position: absolute;
+     top: 0;
+     right: 25px;
+     font-size: 36px;
+     margin-left: 50px;
+   }
+   
+   .openbtn {
+     font-size: 20px;
+     cursor: pointer;
+     padding: 10px 15px;
+     border: none;
+   }
+   
+   .openbtn:hover {
+     background-color: #444;
+   }
+   
+   #main {
+     transition: margin-left .5s;
+     padding: 16px;
+   }
+   
+   @media screen and (max-height: 450px) {
+     .sidebar {padding-top: 15px;}
+     .sidebar a {font-size: 18px;}
+   }
+   </style>
+
+
+   <div id="headings">
+        
+           <table>
+                  <tr>
+                      <td bgcolor="0B0404">	
+                         <h1></h1>
+	              </td>
+                      <td bgcolor="0B0404">	
+	              </td>
+                      <td bgcolor="0B0404" width="70%">
+                      </td> 
+                  </tr>
+            </table> 
+   </div> 
+   <div class="w3-bar w3-mobile img" style="width:100%;  height: 600px; display: block; background-size: cover;  margin-bottom: 30px; background:  linear-gradient(0deg,transparent, rgba(36, 35, 37, 0.65)), url('https://ajaenterprise.s3.amazonaws.com/Mobile-Home-Park-Hero-Image.png')no-repeat center center / cover;"> 
+      <div class="w3-bar w3-mobile img" style="opacity: 1; width:100%; margin-top: 20px; margin-bottom: 30px; "> 
+       <div class="w3-top nav img"  style="  height:90px; ">
+         <a href="https://ajareal.com">
+         <img src="https://ajaenterprise.s3.amazonaws.com/AJAEnterprise-Banner.png" alt="loading..." width=125px; height=60px;>
+         </a>
+         <div id="mySidebar" class="sidebar">
+             <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">×</a>
+             <ul>
+                 <li class="nav__item" onClick="Login()"> <a href="#" >Customer Portal</a></li>
+                 <li class="nav__item" onClick="AboutUs()"> <a href="#" >About Us</a></li>
+                 <li class="nav__item" onClick="SubmitCheck()"> <a href="#" >Our Mission</a></li>
+                 <li class="nav__item" onClick="RentTuro()"> <a href="#" >Turo</a></li>
+                 <li class="nav__item" onClick="Featured()"> <a href="#" >Featured</a></li>
+              </ul>
+         </div>
+            
+         <div id="menu">
+             <button class="openbtn" onclick="openMenu()">☰</button>  
+         </div>
+       </div>
+      </div>
+
+   <div id="tabs" style="position: absolute; top:160px; left:630px; text-align:center; width:900px; height:25px"> 
+   <font face="verdana,arial" size=-1></font>
+      <table id='ap_table' style="text-align:center">
+        <caption style="background-color: red; color: white";>OOPS! Something went wrong! Cannot logon to AJAEnterprise / Database</caption>
+        <tr>
+           <td bgcolor="F71212"><table>
+        <tr>
+           <td bgcolor="F71212" align=center style="padding:2;padding-bottom:4">
+               <font size=-1 color="white" face="verdana,arial">
+               <b>
+                  Enter your login and password
+               </b>
+               </font>
+          </tr>
+          <tr>
+            <td bgcolor="white" style="padding:5">
+               <br>
+                 <form>
+                    <input type="hidden" name="action" value="login">
+                    <input type="hidden" name="hide" value="">
+                      <table>
+                          <tr>
+                              <td>
+                                 <font face="verdana,arial" size=-1>Login:
+                                 </font>
+                              </td>
+                              <td>
+                                 <input type="text" name="lg">
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <font face="verdana,arial" size=-1>Password:
+                                 </font>
+                              </td>
+                              <td>
+                                 <input type="password" name="pw">
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <font face="verdana,arial" size=-1>&nbsp;
+                                 </font>
+                              </td>
+                              <td>
+                                 <font face="verdana,arial" size=-1>
+                                    <input type="button" value="Enter" onClick="SubmitPassword()">
+                                 </font>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan=2>
+                                 <font face="verdana,arial" size=-1>&nbsp;
+                                 </font>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan=2>
+                                 <font face="verdana,arial" size=-1>
+                                   Lost your username or password? Find it 
+                                    <a href="mailto:arthurg.mcdonald@firstdata.com"> 
+                                         here
+                                     </a>!
+                                 </font>
+                               </td>
+                            </tr>
+                            <tr>
+                               <td colspan=2>
+                                  <font face="verdana,arial" size=-1>
+                                     Not member yet? Click 
+                                     <a href="mailto:arthurg.mcdonald@firstdata.com">
+                                        here
+                                     </a> 
+                                        to register.
+                                  </font>
+                                </td>
+                            </tr>
+                      </table>
+                  </form>
+             
+          </tr>
+       </table>
+      </td>
+    </tr>
+</table>
+</div>
+<div style="position: absolute; top:410px; left:425px; text-align:center; width:900px; height:25px; bgcolor="AliceBlue"">
+   
+  <table id='yh_table' class="w3-center;">
+    <tr>
+      <td bgcolor=AliceBlue>       
+         <h style="text-align:center;">
+             Mmmm! Well this is embarrassing. It looks like we're having trouble or you are not on our list. 
+         </h>
+      </td>
+    </tr>
+    <tr>
+      <td bgcolor=AliceBlue>       
+         <h style="text-align:center;">
+             Or maybe, the Server is down. 
+         </h>
+      </td>
+      <tr>
+      <td bgcolor=AliceBlue>       
+         <h style="text-align:center;">
+             Please contact the system administrator or try reentering your credentials. 
+         </h>
+      </td>
+    </tr>
+  </table>
+</div>        
+</body>
+
+</html>
