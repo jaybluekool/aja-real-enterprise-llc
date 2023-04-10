@@ -2,13 +2,16 @@
   "name": "my-express-server",
   "version": "1.0.0",
   "description": "my first express server",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "author": "Arthur McDonald",
   "license": "ISC",
+  "engines": {
+    "node": "8.15.0"
+  },
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "body-parser": "^1.20.2",
