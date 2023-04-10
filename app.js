@@ -6,7 +6,8 @@ const bodyParser   = require('body-parser');
 const path         = require('path');
 const mongoClient  = require('mongodb').MongoClient;
 const assert       = require('assert');
-const url          = 'mongodb+srv://arthurm:YuIgBfoX6PRsgDHo@cluster0.tlhxezq.mongodb.net/?retryWrites=true&w=majority:27017';
+const MongoDbPw    =  process.env.MONGODB_PW
+const url          = 'mongodb+srv://arthurm:' + MongoDbPw + '@cluster0.tlhxezq.mongodb.net/?retryWrites=true&w=majority:27017';
 const dbName       = 'products';
 const client       = new mongoClient(url); 
 var _              = require ("lodash");
