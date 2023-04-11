@@ -2,10 +2,10 @@
   "name": "my-express-server",
   "version": "1.0.0",
   "description": "my first express server",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "index.js"
   },
   "author": "Arthur McDonald",
   "license": "ISC",
