@@ -10,7 +10,7 @@
   "author": "Arthur McDonald",
   "license": "ISC",
   "engines": {
-    "node": "8.15.0"
+    "node": "18.15.0"
   },
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.80",
