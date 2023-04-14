@@ -4,11 +4,11 @@ const app          = express();
 const PORT         = process.env.PORT || 3000;
 const bodyParser   = require('body-parser');
 const path         = require('path');
-//const mongoClient  = require('mongodb').MongoClient;
-//const assert       = require('assert');
-//const url          = 'mongodb+srv://arthurm:' + process.env.MONGODB_PW + '@cluster0.tlhxezq.mongodb.net/?retryWrites=true&w=majority:27017';
+const mongoClient  = require('mongodb').MongoClient;
+const assert       = require('assert');
+const url          = 'mongodb+srv://arthurm:' + process.env.MONGODB_PW + '@cluster0.tlhxezq.mongodb.net/?retryWrites=true&w=majority:27017';
 const dbName       = 'products';
-//const client       = new mongoClient(url); 
+const client       = new mongoClient(url); 
 var _              = require ("lodash");
 //const filePath   = (path.join(__dirname) + '/API-Key.txt');  
 //const fs         = require("fs");
@@ -24,22 +24,22 @@ var _              = require ("lodash");
 const options = {
     root: path.join(__dirname)
 };
-// client.connect(function(err) {
-//     assert.equal(null, err);
-//     if (!err) {
-//        console.log('Successfully connected to MongoDb server');
-//     }
-//     else {
-//        console.log("Failed to connect to MongoDb: " + err); 
-//     }
-//     const db = client.db(dbName);
-//     const collection = db.collection('products');
-//     collection.insertOne({ID: 2, name: "Pencil", price: .80});
-//     assert.equal(null, err);
-//     console.log('Successfully added to products DB');
-//     callback(result);
-//     client.close();
-// });
+ client.connect(function(err) {
+     assert.equal(null, err);
+     if (!err) {
+        console.log('Successfully connected to MongoDb server');
+     }
+     else {
+        console.log("Failed to connect to MongoDb: " + err); 
+     }
+     const db = client.db(dbName);
+     const collection = db.collection('products');
+     collection.insertOne({ID: 2, name: "Pencil", price: .80});
+     assert.equal(null, err);
+     console.log('Successfully added to products DB');
+     callback(result);
+     client.close();
+ });
 app.listen(PORT, function()
     {console.log('New connection... ' + PORT)});
     
